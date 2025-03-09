@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const restaurants = [
-  { id: 1, name: "Spicy Grill", image: "https://source.unsplash.com/600x400/?restaurant,food" },
-  { id: 2, name: "Chicken House", image: "https://source.unsplash.com/600x400/?indian,restaurant" },
-  { id: 3, name: "Pasta Palace", image: "https://source.unsplash.com/600x400/?pasta,restaurant" },
-  { id: 4, name: "Burger Barn", image: "https://source.unsplash.com/600x400/?burger,restaurant" },
+  { id: 1, name: "Spicy Grill", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&auto=format&fit=crop&q=60" },
+  { id: 2, name: "Chicken House", image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&auto=format&fit=crop&q=60" },
+  { id: 3, name: "Pasta Palace", image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&auto=format&fit=crop&q=60" },
+  { id: 4, name: "Burger Barn", image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&auto=format&fit=crop&q=60" },
 ];
 
 const Restaurants = () => {

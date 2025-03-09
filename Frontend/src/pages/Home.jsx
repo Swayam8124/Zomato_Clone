@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 
 const restaurants = [
-  { name: "Spicy Grill", specialty: "Spicy Indian Curries", image: "https://source.unsplash.com/400x300/?restaurant,spicy" },
-  { name: "Chicken House", specialty: "Grilled & Fried Chicken", image: "https://source.unsplash.com/400x300/?restaurant,chicken" },
-  { name: "Pasta Palace", specialty: "Authentic Italian Pasta", image: "https://source.unsplash.com/400x300/?restaurant,pasta" },
-  { name: "Burger Barn", specialty: "Delicious Gourmet Burgers", image: "https://source.unsplash.com/400x300/?restaurant,burger" },
+  { name: "Spicy Grill", specialty: "Spicy Indian Curries", image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&auto=format&fit=crop&q=60" },
+  { name: "Chicken House", specialty: "Grilled & Fried Chicken", image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&auto=format&fit=crop&q=60" },
+  { name: "Pasta Palace", specialty: "Authentic Italian Pasta", image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=600&auto=format&fit=crop&q=60" },
+  { name: "Burger Barn", specialty: "Delicious Burgers", image: "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&auto=format&fit=crop&q=60" },
 ];
 
 const foodItems = [
@@ -16,9 +16,12 @@ const foodItems = [
   { id: 4, name: "Biryani", price: 299, image: "https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=1000&auto=format&fit=crop&q=60" },
   { id: 5, name: "Butter Chicken", price: 349, image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?q=80&w=1170&auto=format&fit=crop" },
   { id: 6, name: "Gulab Jamun", price: 99, image: "https://www.chefadora.com/_next/image?url=https%3A%2F%2Fchefadora.b-cdn.net%2F003f0f0351967a7cb6212a8d9bfaf889_f956154e73.jpg&w=3840&q=75" },
-  { id: 7, name: "Paneer Tikka", price: 199, image: "https://cookingfromheart.com/wp-content/uploads/201/03/Paneer-Tikka-Masala-4.jpg" },
+  { id: 7, name: "Paneer Tikka", price: 199, image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?q=80&w=2574&auto=format&fit=crop" },
   { id: 8, name: "Dosa", price: 149, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQACh1yWbIwNiWJOZ-8lkt9oGkf5cdMK4DV8Q&s" },
   { id: 9, name: "Lassi", price: 79, image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwQlIz_DnMJ-5w_dErD9gNV_khWZuLHU3q0w&s" },
+  { id: 10, name: "Samosa", price: 49, image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=2070&auto=format&fit=crop" },
+  { id: 11, name: "Tandoori Chicken", price: 249, image: "https://media.istockphoto.com/id/155369528/photo/tandoori-chicken.webp?a=1&b=1&s=612x612&w=0&k=20&c=0fBSQEIbeiCusZ4ZdrFQt4qdgwOxrYrfRhODh1aZt8k=" },
+  { id: 12, name: "Ice Cream", price: 89, image: "https://images.unsplash.com/photo-1580915411954-282cb1b0d780?q=80&w=2070&auto=format&fit=crop" },
 ];
 
 const Home = () => {
@@ -49,7 +52,7 @@ const Home = () => {
     <div className="min-h-screen bg-gray-100">
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full bg-white shadow-lg py-4 px-6 flex justify-between items-center z-50">
-        <h1 className="text-3xl font-bold text-red-500">Tomato</h1>
+        <h1 className="text-3xl font-bold text-red-500">Zomato</h1>
         <div className="flex items-center gap-6">
           <Link to="/" className="text-gray-700 hover:text-red-500">Home</Link>
           <Link to="/restaurants" className="text-gray-700 hover:text-red-500">Restaurants</Link>

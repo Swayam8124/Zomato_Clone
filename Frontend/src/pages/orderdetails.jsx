@@ -5,12 +5,26 @@ import { motion } from "framer-motion";
 const orders = [
   { id: 1, restaurant: "Pizza Palace", items: ["Pepperoni Pizza", "Garlic Bread"], total: "$25.99", status: "Delivered" },
   { id: 2, restaurant: "Burger Hub", items: ["Cheeseburger", "Fries"], total: "$15.49", status: "Preparing" },
-  { id: 3, restaurant: "Sushi Delight", items: ["Salmon Sushi", "Miso Soup"], total: "$30.99", status: "On the way" },
+  { id: 3, restaurant: "Sushi Delight", items: ["Salmon Sushi", "Miso Soup"], total: "$30.99", status: "On the way" },  
 ];
 
 const OrderDetails = () => {
   const { id } = useParams();
-  const order = orders.find((order) => order.id === parseInt(id));
+  const [order, setOrder] = useState(null);
+
+  useEffect(() => {
+    // Get orders from localStorage
+    const storedOrders = JSON.parse(localStorage.getItem("orders")) || [];
+    const foundOrder = storedOrders.find((order) => order.id === parseInt(id));
+    
+    // If not found in localStorage, check hardcoded orders
+    if (!foundOrder) {
+      const hardcodedOrder = orders.find((order) => order.id === parseInt(id));
+      setOrder(hardcodedOrder);
+    } else {
+      setOrder(foundOrder);
+    }
+  }, [id]);
 
   if (!order) {
     return <p className="text-center text-gray-500">Order not found.</p>;

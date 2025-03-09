@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Header from "../pages/Header";
@@ -10,6 +10,24 @@ const orders = [
 ];
 
 const Orders = () => {
+  const [allOrders, setAllOrders] = useState([]);
+
+  useEffect(() => {
+    // Get stored orders and combine with hardcoded orders
+    const storedOrders = JSON.parse(localStorage.getItem("orders")) || [];
+    const combinedOrders = [...storedOrders, ...orders];
+    
+    // Sort by most recent first (assuming stored orders have timestamp)
+    const sortedOrders = combinedOrders.sort((a, b) => {
+      if (a.timestamp && b.timestamp) {
+        return new Date(b.timestamp) - new Date(a.timestamp);
+      }
+      return 0; // Keep original order for hardcoded items
+    });
+
+    setAllOrders(sortedOrders);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-100">
       {/* ✅ Header (Same as Home Page) */}
@@ -30,8 +48,8 @@ const Orders = () => {
 
       {/* ✅ Orders Container */}
       <div className="container mx-auto max-w-4xl bg-white p-6 rounded-lg shadow-lg animate-slideUp">
-        {orders.length > 0 ? (
-          orders.map((order) => (
+        {allOrders.length > 0 ? (
+          allOrders.map((order) => (
             <motion.div
               key={order.id}
               whileHover={{ scale: 1.02 }}

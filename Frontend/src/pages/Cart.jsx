@@ -17,11 +17,21 @@ const Cart = () => {
       window.removeEventListener("storage", updateCart);
     };
   }, []);
+  const removeFromCart = (index) => {
+    const updatedCart = cart.filter((_, i) => i !== index);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCart(updatedCart);
+  };
+
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Your Cart 🛒</h1>
-      
+      <h1 className="text-3xl font-bold mb-4 fixed top-24 left-6">Your Cart 🛒</h1>
+      <div className="pt-16">
+      </div>
+      <br />
+      <br />
+      <br />
       {cart.length === 0 ? (
         <p className="text-gray-600">Your cart is empty.</p>
       ) : (
@@ -32,6 +42,12 @@ const Cart = () => {
                 <img src={item.image} alt={item.name} className="w-32 h-32 object-cover rounded-md mb-3" />
                 <h3 className="text-xl font-semibold">{item.name}</h3>
                 <p className="text-red-500 text-lg font-bold">₹{item.price}</p>
+                <button
+                  onClick={() => removeFromCart(index)}
+                  className="mt-2 px-3 py-1 bg-red-500 text-white rounded hover:bg-red-600"
+                >
+                  Remove
+                </button>
               </div>
             ))}
           </div>
